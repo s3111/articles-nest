@@ -22,6 +22,7 @@
 /server/npm-debug.log*
 /server/node_modules
 /server/.npm
+/server/.env
 /server/.idea
 /server/src/mikro-orm.config.ts
 /server/src/config.ts
