@@ -1,0 +1,12 @@
+dist
+temp
+logs
+*.log
+.DS_Store
+npm-debug.log*
+node_modules
+.npm
+.idea
+src/mikro-orm.config.ts
+src/config.ts
+
