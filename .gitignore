@@ -24,7 +24,6 @@
 /server/.npm
 /server/.env
 /server/.idea
-/server/src/mikro-orm.config.ts
 /server/src/config.ts
 /server/src/migrations
 /server/package-lock.json
