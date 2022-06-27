@@ -17,7 +17,19 @@ export class ArticleService {
 
   async findAll(query: any): Promise<IArticlesRO> {
     //categoryId: number, query: any
+    let offset = query.offset || 0;
+    let limit = 10;
+    let articles = [];
+    let count = 0;
+    if ('category' in query) {
+      [articles, count] = await this.articleRepository.findAndCount({ category: query.category }, {orderBy: { createdAt: QueryOrder.DESC }, limit, offset });
+    }else{
+      [articles, count] = await this.articleRepository.findAndCount({},{limit, offset });
+    }
 
+
+    //const users = await em.find(User, { organization: id });
+    /*
     const qb = this.articleRepository
       .createQueryBuilder('a')
       .select('a.*')
@@ -34,11 +46,11 @@ export class ArticleService {
     if ('offset' in query) {
       qb.offset(query.offset);
     }
-
-    const articles = await qb.getResult();
+*/
+    //const articles = await qb.getResult();
 
     //return { articles: articles.map(a => a.toJSON()), articlesCount };
-    return { articles, articlesCount };
+    return { articles, articlesCount:count };
   }
 
   /*

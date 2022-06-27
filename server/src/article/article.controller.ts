@@ -15,6 +15,7 @@ export class ArticleController {
   @ApiResponse({ status: 200, description: 'Return all articles.' })
   @Get()
   async findAll(@Query() query): Promise<IArticlesRO> {
+    //console.log('query',query)
     return this.articleService.findAll(query);
 
   /*

@@ -1,24 +1,31 @@
-import React, {useContext} from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
-import {authRoutes, publicRoutes} from "../routes";
-import {ELEPHANT_ROUTE} from "../utils/consts";
-import {Context} from "../index";
+import React from 'react';
+import { Route, Routes, Navigate} from 'react-router-dom';
+import {publicRoutes} from "../routes";
+import {HOME_ROUTE} from "../utils/consts";
+import Articles from "../pages/Articles";
+import Home from "../pages/Home";
 
+//import {Context} from "../index";
 
 const AppRouter = () => {
-    const {user} = useContext(Context)
-    //console.log(user)
+    //const navigate = useNavigate()
     return (
-        <Switch>
-            {user.isAuth && authRoutes.map(({path, Component}) =>
-                <Route key={path} path={path} component={Component} exact/>
-            )}
-            {publicRoutes.map(({path,Component}) =>
-                <Route key={path} path={path} component={Component} exact/>
-            )}
-            <Redirect to={ELEPHANT_ROUTE}/>
-        </Switch>
+        <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/articles" element={<Articles />}></Route>
+        </Routes>
     );
 };
 
 export default AppRouter;
+//<Navigate to={HOME_ROUTE} replace={true} />
+//<Route path="/" element={<Home />}></Route>
+/*
+
+            {publicRoutes.map(({path, Component}) =>
+                //<Route key={path} path={path} element={Component} exact/>
+                //<Route key={path} path={path} component={Component}></Route>
+
+            )}
+
+ */
