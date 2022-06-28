@@ -1,10 +1,8 @@
-import {Module } from '@nestjs/common';
+import {Module} from '@nestjs/common';
 import {MikroOrmModule} from '@mikro-orm/nestjs'
 import {ArticleController} from './article.controller';
 import {Article} from './article.entity';
 import {ArticleService} from './article.service';
-
-//import { Comment } from './comment.entity';
 
 @Module({
     controllers: [
@@ -13,4 +11,5 @@ import {ArticleService} from './article.service';
     imports: [MikroOrmModule.forFeature({entities: [Article]})],
     providers: [ArticleService],
 })
-export class ArticleModule{}
+export class ArticleModule {
+}

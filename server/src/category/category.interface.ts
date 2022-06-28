@@ -1,5 +1,5 @@
-import { Category } from './category.entity';
+import {Category} from './category.entity';
 
 export interface ICategoriesRO {
-  categories: Category[];
+    categories: Category[];
 }

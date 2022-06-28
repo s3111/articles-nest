@@ -1,5 +1,5 @@
-import { Factory } from '@mikro-orm/seeder';
-import { faker } from '@faker-js/faker';
+import {Factory} from '@mikro-orm/seeder';
+import {faker} from '@faker-js/faker';
 import {Category} from "../../src/category/category.entity";
 
 export class CategoryFactory extends Factory<Category> {
@@ -9,7 +9,7 @@ export class CategoryFactory extends Factory<Category> {
         let name = faker.lorem.words(1)
         return {
             name: name,
-            slug: name.replace(' ','-'),
+            slug: name.replace(' ', '-'),
             description: faker.lorem.sentence(2),
         };
     }

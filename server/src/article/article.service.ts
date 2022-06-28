@@ -1,12 +1,9 @@
 import {Injectable} from '@nestjs/common';
-import {QueryOrder, wrap} from '@mikro-orm/core';
+import {QueryOrder} from '@mikro-orm/core';
 import {InjectRepository} from '@mikro-orm/nestjs'
 import {EntityRepository} from '@mikro-orm/mysql';
-
 import {Article} from './article.entity';
 import {IArticleRO, IArticlesRO} from './article.interface';
-
-//import { CreateArticleDto, CreateCommentDto } from './dto';
 
 @Injectable()
 export class ArticleService {
@@ -21,7 +18,6 @@ export class ArticleService {
         let limit = 5;
         let page = Number(query.page) || 1
         let offset = page * limit - limit
-
         let articles = [];
         let count = 0;
         if ('category' in query) {
@@ -38,8 +34,7 @@ export class ArticleService {
 
     async findOne(where): Promise<IArticleRO> {
         console.log(where)
-        const article = await this.articleRepository.findOne({slug: where} );
-        return { article: article };
+        const article = await this.articleRepository.findOne({slug: where});
+        return {article: article};
     }
-
 }

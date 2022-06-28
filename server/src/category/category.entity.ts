@@ -1,18 +1,18 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import {Entity, PrimaryKey, Property} from '@mikro-orm/core';
 
 @Entity()
 export class Category {
 
-  @PrimaryKey()
-  id: number;
+    @PrimaryKey()
+    id: number;
 
-  @Property()
-  name: string;
+    @Property()
+    name: string;
 
-  @Property()
-  slug: string;
+    @Property()
+    slug: string;
 
-  @Property()
-  description: string;
+    @Property()
+    description: string;
 
 }
