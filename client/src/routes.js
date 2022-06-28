@@ -8,7 +8,6 @@ import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 
 export const publicRoutes = [
-
     {
         path: HOME_ROUTE,
         Component: Home
@@ -21,5 +20,4 @@ export const publicRoutes = [
         path: ARTICLE_ROUTE + '/:slug',
         Component: Article
     },
-
 ]

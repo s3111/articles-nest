@@ -1,16 +1,13 @@
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 import {observer} from "mobx-react-lite";
-import {Context} from "../index";
-import {useNavigate} from "react-router-dom";
+import {Container} from "react-bootstrap";
 
 const Home = observer(() => {
-    //const {user,news} = useContext(Context)
-    //const navigate = useNavigate()
     document.title = '';
     return (
-        <div>
+        <Container>
             <h1>Home</h1>
-        </div>
+        </Container>
     );
 });
 

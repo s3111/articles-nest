@@ -1,33 +1,18 @@
 import React from 'react';
-import { Route, Routes, Navigate} from 'react-router-dom';
-import {publicRoutes} from "../routes";
-import {HOME_ROUTE} from "../utils/consts";
+import {Route, Routes} from 'react-router-dom';
 import Articles from "../pages/Articles";
 import Home from "../pages/Home";
 import Article from "../pages/Article";
-
-//import {Context} from "../index";
+import {ARTICLE_ROUTE, ARTICLES_ROUTE, HOME_ROUTE} from "../utils/consts";
 
 const AppRouter = () => {
-    //const navigate = useNavigate()
     return (
         <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/articles" element={<Articles />}></Route>
-            <Route path={`/article/:slug`} element={<Article />}></Route>
+            <Route path={HOME_ROUTE} element={<Home/>}></Route>
+            <Route path={ARTICLES_ROUTE} element={<Articles/>}></Route>
+            <Route path={`${ARTICLE_ROUTE}/:slug`} element={<Article/>}></Route>
         </Routes>
     );
 };
 
 export default AppRouter;
-//<Navigate to={HOME_ROUTE} replace={true} />
-//<Route path="/" element={<Home />}></Route>
-/*
-
-            {publicRoutes.map(({path, Component}) =>
-                //<Route key={path} path={path} element={Component} exact/>
-                //<Route key={path} path={path} component={Component}></Route>
-
-            )}
-
- */

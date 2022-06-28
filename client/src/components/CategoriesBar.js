@@ -19,18 +19,18 @@ const CategoriesBar = observer(() => {
                 All
             </Card>
             {news && news.categories ? news.categories.map(cat =>
-                <Card
-                    key={cat.id}
-                    className="p-2"
-                    style={{cursor: 'pointer',}}
-                    onClick={() => news.setCategory(cat)}
-                    border={cat.id === news.category.id ? 'primary' : 'light'}
-                >
-                    {cat.name}
-                </Card>
-            )
+                    <Card
+                        key={cat.id}
+                        className="p-2"
+                        style={{cursor: 'pointer',}}
+                        onClick={() => news.setCategory(cat)}
+                        border={cat.id === news.category.id ? 'primary' : 'light'}
+                    >
+                        {cat.name}
+                    </Card>
+                )
                 : <div>No categories</div>
-                }
+            }
         </Row>
     );
 });

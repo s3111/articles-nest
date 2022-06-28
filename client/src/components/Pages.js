@@ -21,7 +21,7 @@ const Pages = observer(() => {
                         onClick={() => news.setPage(1)}
                     />
                     <Pagination.Prev
-                        disabled={news.page === 1 }
+                        disabled={news.page === 1}
                         onClick={() => news.setPage(news.page - 1)}
                     />
                     <Pagination.Item

@@ -15,21 +15,27 @@ export default class NewsStore {
     get categories() {
         return this._categories
     }
+
     get category() {
         return this._category
     }
+
     get articles() {
         return this._articles
     }
+
     get articlesCount() {
         return this._articlesCount
     }
+
     get article() {
         return this._article
     }
+
     get limit() {
         return this._limit
     }
+
     get page() {
         return this._page
     }
@@ -38,22 +44,24 @@ export default class NewsStore {
         this._page = page
     }
 
-    setCategory(category){
+    setCategory(category) {
         this._category = category
     }
-    setCategories(categories){
+
+    setCategories(categories) {
         this._categories = categories
     }
-    setArticle(article){
+
+    setArticle(article) {
         this._article = article
     }
-    setArticles(articles){
+
+    setArticles(articles) {
         this._articles = articles
     }
-    setArticlesCount(articlesCount){
+
+    setArticlesCount(articlesCount) {
         this._articlesCount = articlesCount
     }
-
-
 
 }

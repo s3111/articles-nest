@@ -2,15 +2,12 @@ import React, {useContext, useEffect} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {useNavigate, useParams} from "react-router-dom";
-import {fetchArticle, fetchArticles, fetchCategories} from "../http/newsAPI";
-import CategoriesBar from "../components/CategoriesBar";
+import {fetchArticle} from "../http/newsAPI";
+
 import {Container} from "react-bootstrap";
-import ArticlesList from "../components/ArticlesList";
-import Pages from "../components/Pages";
 
 const Articles = observer(() => {
     const {news} = useContext(Context)
-    //const navigate = useNavigate()
     const {slug} = useParams()
     document.title = 'Article';
     const {category} = useParams()
@@ -25,15 +22,10 @@ const Articles = observer(() => {
             <div>{news.article.body}</div>
             <div>
                 <img srs={news.article.image} width={"400"} height={"300"}/>
-
             </div>
-
             <div>img src: {news.article.image}</div>
         </Container>
     );
 });
 
 export default Articles;
-/*
-
- */

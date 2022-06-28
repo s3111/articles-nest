@@ -1,8 +1,7 @@
 import React, {useContext} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
-import {Card, Container, Row} from "react-bootstrap";
-
+import {Card, Container} from "react-bootstrap";
 
 const ArticlesList = observer(() => {
     const {news} = useContext(Context)
@@ -14,7 +13,7 @@ const ArticlesList = observer(() => {
                         key={art.id}
                         className="p-2"
                     >
-                        <a href={art.slug}>
+                        <a href={`/article/${art.slug}`}>
                             <img src={art.image} width={"400"} height={"300"}/>
                         </a>
                         img {art.image}
