@@ -8,6 +8,7 @@ export default class NewsStore {
         this._articlesCount = 0
         this._article = {}
         this._limit = 5
+        this._page = 1
         makeAutoObservable(this)
     }
 
@@ -28,6 +29,13 @@ export default class NewsStore {
     }
     get limit() {
         return this._limit
+    }
+    get page() {
+        return this._page
+    }
+
+    setPage(page) {
+        this._page = page
     }
 
     setCategory(category){

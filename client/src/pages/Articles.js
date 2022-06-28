@@ -17,11 +17,11 @@ const Articles = observer(() => {
         fetchCategories().then(data => news.setCategories(data.categories))
     },[])
     useEffect(() => {
-        fetchArticles(news.category.id).then(data => {
+        fetchArticles(news.category.id,news.page).then(data => {
             news.setArticles(data.articles)
             news.setArticlesCount(data.articlesCount)
         })
-    },[news.category])
+    },[news.category,news.page])
 
     return (
         <Container>

@@ -18,8 +18,10 @@ export class ArticleService {
     }
 
     async findAll(query: any): Promise<IArticlesRO> {
-        let offset = query.offset || 0;
-        let limit = 10;
+        let limit = 5;
+        let page = Number(query.page) || 1
+        let offset = page * limit - limit
+
         let articles = [];
         let count = 0;
         if ('category' in query) {
@@ -33,13 +35,7 @@ export class ArticleService {
         }
         return {articles, articlesCount: count};
     }
-/*
-    async findOne(slug: any): Promise<IArticleRO> {
-        const article = await this.articleRepository.findOne({slug: slug});
-        return {article};
-    }
 
- */
     async findOne(where): Promise<IArticleRO> {
         console.log(where)
         const article = await this.articleRepository.findOne({slug: where} );
