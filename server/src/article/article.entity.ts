@@ -21,10 +21,16 @@ export class Article {
   title: string;
 
   @Property()
-  description = '';
+  description: string;
 
   @Property()
-  body = '';
+  body: string;
+
+  @Property()
+  likes: number;
+
+  @Property()
+  image: string;
 
   @Property()
   createdAt = new Date();
@@ -32,25 +38,7 @@ export class Article {
   @Property({ onUpdate: () => new Date() })
   updatedAt = new Date();
 
-  //@Property({ type: ArrayType })
-  //categoryList: string[] = [];
 
-  @Property()
-  likes = 0;
-/*
-  constructor(title: string, description: string, body: string) {
-    this.title = title;
-    this.description = description;
-    this.body = body;
-    this.slug = slug(title, { lower: true }) + '-' + (Math.random() * Math.pow(36, 6) | 0).toString(36);
-  }
-*/
-  /*
-  toJSON() {
-    const o = wrap<Article>(this).toObject() as ArticleDTO;
-    return o;
-  }
-*/
 }
 
 export interface ArticleDTO extends EntityDTO<Article> {}

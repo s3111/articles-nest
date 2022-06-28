@@ -5,8 +5,8 @@ export const fetchCategories = async () => {
     return data
 }
 
-export const fetchArticles = async (query) => {
-    const {data} = await $host.get('/api/articles', {params: query})
+export const fetchArticles = async (category) => {
+    const {data} = await $host.get('/api/articles', {params: {category}})
     return data
 }
 

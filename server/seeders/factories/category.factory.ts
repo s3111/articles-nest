@@ -6,11 +6,11 @@ export class CategoryFactory extends Factory<Category> {
     model = Category;
 
     definition(): Partial<Category> {
-        let name = faker.lorem.word(2)
+        let name = faker.lorem.words(1)
         return {
             name: name,
             slug: name.replace(' ','-'),
-            description: faker.lorem.sentence(5),
+            description: faker.lorem.sentence(2),
         };
     }
 }

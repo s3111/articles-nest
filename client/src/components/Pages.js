@@ -6,9 +6,9 @@ import {Pagination} from "react-bootstrap";
 const Pages = observer(() => {
     const {news} = useContext(Context)
 
-    const pageCount = Math.ceil(news.totalCount / news.limit)
+    const pageCount = Math.ceil(news.articlesCount / news.limit)
     const pages = []
-    console.log('news', news.totalCount, news.limit, pageCount)
+    console.log('news', news.articlesCount, news.limit, pageCount)
     for (let i = 0; i < pageCount; i++) {
         pages.push(i + 1)
     }
@@ -26,7 +26,7 @@ const Pages = observer(() => {
                     />
                     <Pagination.Item
                         active={true}
-                        disabled={disabled}
+                        disabled={true}
                     >
                         {news.page} of {pageCount}
                     </Pagination.Item>
@@ -40,7 +40,7 @@ const Pages = observer(() => {
                     />
                 </Pagination>
                 :
-                <div></div>
+                <div>No pages</div>
             }
         </div>
     );

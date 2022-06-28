@@ -9,11 +9,19 @@ export class DatabaseSeeder extends Seeder {
 
   async run(em: EntityManager, context: Dictionary): Promise<void> {
     //new UserFactory(em).make(10);
+    for(let i=0; i<10; i++){
+      let articleTmp = new CategoryFactory(em).makeOne();
+      new ArticleFactory(em).each(article => {
+        article.category = articleTmp
+      }).make(25);
 
-    const articles: Article[] = new ArticleFactory(em).each(article => {
-      article.category = new CategoryFactory(em).makeOne();
-    }).make(5);
+    }
 /*
+      const articles: Article[] = new ArticleFactory(em).each(article => {
+        article.category = articleTmp
+      }).make(25);
+
+
     const books: Book[] = new BookFactory(orm.em).each(book => {
       book.author = new AuthorFactory(orm.em).makeOne();
     }).make(5);

@@ -13,6 +13,7 @@ export class CategoryService {
 
   async findAll(): Promise<ICategoriesRO> {
     const categories = await this.categoryRepository.findAll();
-    return { categories };
+    //console.log(categories)
+    return {categories};
   }
 }

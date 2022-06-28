@@ -11,13 +11,9 @@ export class ArticleFactory extends Factory<Article> {
             title: faker.lorem.sentence(),
             description: faker.lorem.sentence(15),
             body: faker.lorem.paragraph( 4),
-            //likes: faker.random.numeric()
+            likes: Number(Math.floor(Math.random()*2000000)),
+            image: faker.image.city(800, 600, true)
             //categoryId: context.categoryId
-            //createdAt: faker.date.between(),
-            //updatedAt: faker.date.between(),
-            //tagList: faker.lorem.words(),
-            //author: context.author,
-
         };
     }
 }
