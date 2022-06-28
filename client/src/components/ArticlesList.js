@@ -17,10 +17,12 @@ const ArticlesList = observer(() => {
                         <a href={art.slug}>
                             <img src={art.image} width={"400"} height={"300"}/>
                         </a>
-                        <a href={art.slug}>
+                        src {art.src}
+                        <a href={`/article/${art.slug}`}>
                             <div>{art.title}</div>
                         </a>
                         <div>{art.description}</div>
+                        <div>Likes: {art.likes}</div>
                     </Card>
                 )
                 : <div>No articles</div>
