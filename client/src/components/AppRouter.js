@@ -4,6 +4,7 @@ import {publicRoutes} from "../routes";
 import {HOME_ROUTE} from "../utils/consts";
 import Articles from "../pages/Articles";
 import Home from "../pages/Home";
+import Article from "../pages/Article";
 
 //import {Context} from "../index";
 
@@ -13,6 +14,7 @@ const AppRouter = () => {
         <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/articles" element={<Articles />}></Route>
+            <Route path={`/article/:slug`} element={<Article />}></Route>
         </Routes>
     );
 };

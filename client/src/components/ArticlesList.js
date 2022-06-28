@@ -17,7 +17,7 @@ const ArticlesList = observer(() => {
                         <a href={art.slug}>
                             <img src={art.image} width={"400"} height={"300"}/>
                         </a>
-                        src {art.src}
+                        img {art.image}
                         <a href={`/article/${art.slug}`}>
                             <div>{art.title}</div>
                         </a>

@@ -10,7 +10,7 @@ export const fetchArticles = async (category) => {
     return data
 }
 
-export const fetchArticle = async (id) => {
-    const {data} = await $host.get('/api/article', {params: {id}})
+export const fetchArticle = async (slug) => {
+    const {data} = await $host.get('/api/articles/'+slug)
     return data
 }

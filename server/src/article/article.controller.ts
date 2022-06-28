@@ -9,25 +9,38 @@ import { ArticleService } from './article.service';
 @Controller('articles')
 export class ArticleController {
 
-  constructor(private readonly articleService: ArticleService) {}
+  constructor(private readonly articleService: ArticleService) {
+  }
 
-  @ApiOperation({ summary: 'Get all articles' })
-  @ApiResponse({ status: 200, description: 'Return all articles.' })
+  @ApiOperation({summary: 'Get all articles'})
+  @ApiResponse({status: 200, description: 'Return all articles.'})
   @Get()
   async findAll(@Query() query): Promise<IArticlesRO> {
-    //console.log('query',query)
     return this.articleService.findAll(query);
+  }
+/*
+  @Get(':slug')
+  async findOne(@Param('slug') slug: string): Promise<IArticleRO> {
+    return this.articleService.findOne({slug});
+  }
+*/
+  @Get('/:value')
+  findOne(@Param('value') value: string) {
+    return this.articleService.findOne(value);
+  }
 
+}
   /*
   //@Category('id') category: number, @Query() query
+
   async findAll(@User('id') user: number, @Query() query): Promise<IArticlesRO> {
     return this.articleService.findAll(+user, query);
 
    */
-  }
 
 
-}
+
+
 
 /*
 @ApiOperation({ summary: 'Get article feed' })
